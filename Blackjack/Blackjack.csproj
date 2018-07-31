@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,8 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Deck\Card.cs" />
+    <Compile Include="Deck\InitialiseDeck.cs" />
+    <Compile Include="Interfaces\IStartDeck.cs" />
+    <Compile Include="Gameplay\Bust.cs" />
+    <Compile Include="Deck\CalculateTotal.cs" />
+    <Compile Include="Interfaces\IBust.cs" />
+    <Compile Include="Interfaces\ICalculateTotal.cs" />
+    <Compile Include="Interfaces\IRemoveCard.cs" />
+    <Compile Include="Interfaces\IReturnCard.cs" />
+    <Compile Include="Interfaces\IWinner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Deck\RemoveCard.cs" />
+    <Compile Include="Deck\ReturnCard.cs" />
+    <Compile Include="Gameplay\Winner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
