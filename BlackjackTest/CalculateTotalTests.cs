@@ -204,7 +204,7 @@ namespace BlackjackTest
         {
             //Given I have a list of 2 cards
             List<Card> dealer = new List<Card>();
-            //And they are Jack and Queen
+            //And they are Jack and Ace
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "Ace" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "Jack" });
             //And the ace == 1 (false)
@@ -214,6 +214,117 @@ namespace BlackjackTest
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 11
             Assert.AreEqual(11, total);
+        }
+
+        [TestMethod]
+        public void Given_I_Have_a_card_list_containing_a_3_and_a_6_and_a_8_return_a_total_of_17()
+        {
+            //Given I have a list of 3 cards
+            List<Card> dealer = new List<Card>();
+            //And they are 3 and 6 and 8
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "3" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "6" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "8" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
+            //When i call the calculate score method
+            ICalculateTotal calculateTotal = new CalculateTotal();
+            int total = calculateTotal.Calculate(dealer, aceBool);
+            //Then i get back a total of 17
+            Assert.AreEqual(17, total);
+        }
+
+        [TestMethod]
+        public void Given_I_Have_a_card_list_containing_a_3_and_a_6_and_a_8_and_a_2_return_a_total_of_19()
+        {
+            //Given I have a list of 3 cards
+            List<Card> dealer = new List<Card>();
+            //And they are 3 and 6 and 8 and a 2
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "3" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "6" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "8" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "2" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
+            //When i call the calculate score method
+            ICalculateTotal calculateTotal = new CalculateTotal();
+            int total = calculateTotal.Calculate(dealer, aceBool);
+            //Then i get back a total of 19
+            Assert.AreEqual(19, total);
+        }
+
+        [TestMethod]
+        public void Given_I_Have_a_card_list_containing_a_3_and_a_6_and_a_8_and_a_2_and_another_2_return_a_total_of_21()
+        {
+            //Given I have a list of 3 cards
+            List<Card> dealer = new List<Card>();
+            //And they are 3 and 6 and 8 and a 2 and another 2
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "3" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "6" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "8" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "2" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "2" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
+            //When i call the calculate score method
+            ICalculateTotal calculateTotal = new CalculateTotal();
+            int total = calculateTotal.Calculate(dealer, aceBool);
+            //Then i get back a total of 21
+            Assert.AreEqual(21, total);
+        }
+
+        [TestMethod]
+        public void Given_I_Have_a_card_list_containing_a_3_and_a_6_and_a_8_and_a_2_and_an_Ace_with_the_ace_being_false_return_a_total_of_20()
+        {
+            //Given I have a list of 3 cards
+            List<Card> dealer = new List<Card>();
+            //And they are 3 and 6 and 8 and a 2 and an Ace
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "3" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "6" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "8" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "2" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "Ace" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
+            //When i call the calculate score method
+            ICalculateTotal calculateTotal = new CalculateTotal();
+            int total = calculateTotal.Calculate(dealer, aceBool);
+            //Then i get back a total of 20
+            Assert.AreEqual(20, total);
+        }
+
+        [TestMethod]
+        public void Given_I_Have_a_card_list_containing_a_3_and_an_Ace_with_the_ace_being_false_return_a_total_of_4()
+        {
+            //Given I have a list of 3 cards
+            List<Card> dealer = new List<Card>();
+            //And they are 3 and an Ace
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "3" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "Ace" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
+            //When i call the calculate score method
+            ICalculateTotal calculateTotal = new CalculateTotal();
+            int total = calculateTotal.Calculate(dealer, aceBool);
+            //Then i get back a total of 4
+            Assert.AreEqual(4, total);
+        }
+
+        [TestMethod]
+        public void Given_I_Have_a_card_list_containing_a_3_and_an_Ace_with_the_ace_being_true_return_a_total_of_14()
+        {
+            //Given I have a list of 3 cards
+            List<Card> dealer = new List<Card>();
+            //And they are 3 and an Ace
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "3" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "Ace" });
+            //And the ace == 1 (false)
+            Boolean aceBool = true;
+            //When i call the calculate score method
+            ICalculateTotal calculateTotal = new CalculateTotal();
+            int total = calculateTotal.Calculate(dealer, aceBool);
+            //Then i get back a total of 14
+            Assert.AreEqual(14, total);
         }
     }
 }
