@@ -31,7 +31,6 @@ namespace Blackjack
             Console.WriteLine ("Welcome! To play Blackjack press Y. To quit press N.");
             string decision = Console.ReadLine();
 
-
             int total = 0;
             int dealerTotal = 0;
             if (decision == "y" || decision == "Y")

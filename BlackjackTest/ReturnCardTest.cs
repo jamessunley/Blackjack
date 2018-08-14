@@ -74,28 +74,34 @@ namespace BlackjackTest
             deck.Add(new Card { Suit = Suit.Clubs, Value = "3" });
             deck.Add(new Card { Suit = Suit.Clubs, Value = "6" });
             deck.Add(new Card { Suit = Suit.Hearts, Value = "King" });
-            deck.Add(new Card { Suit = Suit.Hearts, Value = "Queen" });
+            deck.Add(new Card { Suit = Suit.Diamonds, Value = "Queen" });
             //when i call the returnCard method
             IReturnCard returnCard = new ReturnCard();
             Card final = returnCard.ReturnCardFromDeck(deck);
             //Then I will get back an string (card) from top of deck
             Assert.AreEqual("Queen", final.Value);
-            Assert.AreEqual("Hearts", final.Suit.ToString());
+            Assert.AreEqual("Diamonds", final.Suit.ToString());
         }
 
-        //[TestMethod]
-        //public void Given_I_have_a_deck_where_there_is_no_last_card_the_deck_is_empty()
-        //{
-        //    //Given I have a deck list
-        //    List<Card> deck = new List<Card>();
-        //    //And the deck contains no cards
+        [TestMethod]
+        public void Given_I_have_a_deck_where_the_last_card_is_a_Queen_return_Queen_of_Spades()
+        {
+            //Given I have a deck list
+            List<Card> deck = new List<Card>();
+            //And the deck contains 2, 3, 6, King, Queen
+            deck.Add(new Card { Suit = Suit.Clubs, Value = "2" });
+            deck.Add(new Card { Suit = Suit.Clubs, Value = "3" });
+            deck.Add(new Card { Suit = Suit.Clubs, Value = "6" });
+            deck.Add(new Card { Suit = Suit.Hearts, Value = "King" });
+            deck.Add(new Card { Suit = Suit.Spades, Value = "Queen" });
+            //when i call the returnCard method
+            IReturnCard returnCard = new ReturnCard();
+            Card final = returnCard.ReturnCardFromDeck(deck);
+            //Then I will get back an string (card) from top of deck
+            Assert.AreEqual("Queen", final.Value);
+            Assert.AreEqual("Spades", final.Suit.ToString());
+        }
 
-        //    //when i call the returnCard method
-        //    IReturnCard returnCard = new ReturnCard();
-        //    Card final = returnCard.ReturnCardFromDeck(deck);
-        //    //Then I will get back an string (card) from top of deck
-        //    Assert.AreEqual("0", final.Value);
-        //}
     }
 }
 

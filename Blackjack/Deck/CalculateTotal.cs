@@ -12,10 +12,10 @@ namespace Blackjack
 
             dealer.ForEach(card =>
            {
-               if (card.Value.StartsWith("J") || card.Value.StartsWith("Q") || card.Value.StartsWith("K"))
+               if (card.Value == "Jack" || card.Value == "Queen" || card.Value == "King")
                {
                    total += 10;
-               }else if (card.Value.StartsWith("A"))
+               }else if (card.Value == "Ace")
                {
                    total += 11;
                }
