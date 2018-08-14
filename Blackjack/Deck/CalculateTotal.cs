@@ -6,7 +6,7 @@ namespace Blackjack
 {
     public class CalculateTotal : ICalculateTotal
     {
-        public int Calculate(List<Card> dealer)
+        public int Calculate(List<Card> dealer, Boolean aceBool)
         {
             int total = 0;
 
@@ -15,9 +15,13 @@ namespace Blackjack
                if (card.Value == "Jack" || card.Value == "Queen" || card.Value == "King")
                {
                    total += 10;
-               }else if (card.Value == "Ace")
+               }else if (card.Value == "Ace" && aceBool == true)
                {
                    total += 11;
+               }
+               else if (card.Value == "Ace" && aceBool == false)
+               {
+                   total += 1;
                }
                else
                    total += Int32.Parse(card.Value);

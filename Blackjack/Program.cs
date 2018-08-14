@@ -19,6 +19,7 @@ namespace Blackjack
 
         public static List<Card> playerHand = new List<Card>();
         public static List<Card> dealerHand = new List<Card>();
+        public static Boolean aceBool = false;
         static void Main(string[] args)
         {
             List<Card> deck = startDeck.InitialisedDeck();
@@ -52,7 +53,7 @@ namespace Blackjack
 
                 Console.WriteLine(playerHand[0].Value + " of " + deck[0].Suit);
                 Console.WriteLine(playerHand[1].Value + " of " + deck[1].Suit);
-                total = calculateTotal.Calculate(playerHand);
+                total = calculateTotal.Calculate(playerHand, aceBool);
                 Console.WriteLine("Your current hand is equal to: " + total);
 
                 Console.WriteLine("Do you want to stick or twist? T/S");
@@ -73,7 +74,7 @@ namespace Blackjack
                         Console.WriteLine(playerHand[i].Value + " of " + deck[i].Suit);
                         i++;
                     }
-                    total = calculateTotal.Calculate(playerHand);
+                    total = calculateTotal.Calculate(playerHand, aceBool);
                     Console.WriteLine("Your current hand is equal to: " + total);
 
                     if (bust.Calculate(total))
@@ -91,7 +92,7 @@ namespace Blackjack
 
             if(decision == "S"|| decision == "s")
             {
-                dealerTotal = calculateTotal.Calculate(dealerHand);
+                dealerTotal = calculateTotal.Calculate(dealerHand, aceBool);
                 bool isBust = bust.Calculate(dealerTotal);
                 while (!isBust)
                 {
@@ -105,7 +106,7 @@ namespace Blackjack
                         Console.WriteLine(dealerHand[i].Value + " of " + deck[i].Suit);
                         i++;
                     }
-                    dealerTotal = calculateTotal.Calculate(dealerHand);
+                    dealerTotal = calculateTotal.Calculate(dealerHand, aceBool);
                     isBust = bust.Calculate(dealerTotal);
                     if (dealerTotal >= 17)
                     {

@@ -17,9 +17,11 @@ namespace BlackjackTest
             //And they are 3 and 6
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "3" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "6" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 9
             Assert.AreEqual(9, total);
         }
@@ -32,9 +34,11 @@ namespace BlackjackTest
             //And they are 9 and 10
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "9" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "10" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 19
             Assert.AreEqual(19, total);
         }
@@ -48,9 +52,11 @@ namespace BlackjackTest
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "3" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "6" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "9" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 18
             Assert.AreEqual(18, total);
         }
@@ -65,9 +71,11 @@ namespace BlackjackTest
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "6" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "9" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "2" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
         }
@@ -81,9 +89,11 @@ namespace BlackjackTest
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "10" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "9" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "8" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 27
             Assert.AreEqual(27, total);
         }
@@ -96,9 +106,11 @@ namespace BlackjackTest
             //And they are 10 and 10
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "10" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "10" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
         }
@@ -111,9 +123,11 @@ namespace BlackjackTest
             //And they are 10 and Jack
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "10" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "Jack" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
         }
@@ -126,9 +140,11 @@ namespace BlackjackTest
             //And they are 10 and Queen
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "10" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "Queen" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
         }
@@ -141,24 +157,27 @@ namespace BlackjackTest
             //And they are 10 and King
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "10" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "King" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
-            //Then i get back a total of 20
+            int total = calculateTotal.Calculate(dealer, aceBool);
             Assert.AreEqual(20, total);
         }
 
         [TestMethod]
-        public void Given_I_Have_a_card_list_containing_a_10_and_a_Ace_return_a_total_of_20()
+        public void Given_I_Have_a_card_list_containing_a_10_and_a_Ace_and_option_of_ace_being_true_return_a_total_of_21()
         {
             //Given I have a list of 2 cards
             List<Card> dealer = new List<Card>();
             //And they are 10 and Ace
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "10" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "Ace" });
+            //And the ace == 1 (false)
+            Boolean aceBool = true;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 21
             Assert.AreEqual(21, total);
         }
@@ -171,11 +190,30 @@ namespace BlackjackTest
             //And they are Jack and Queen
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "Queen" });
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "Jack" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
             //When i call the calculate score method
             ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer);
+            int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
+        }
+
+        [TestMethod]
+        public void Given_I_Have_a_card_list_containing_an_Ace_and_a_Queen_with_the_option_of_ace_being_false_return_a_total_of_11()
+        {
+            //Given I have a list of 2 cards
+            List<Card> dealer = new List<Card>();
+            //And they are Jack and Queen
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "Ace" });
+            dealer.Add(new Card { Suit = Suit.Clubs, Value = "Jack" });
+            //And the ace == 1 (false)
+            Boolean aceBool = false;
+            //When i call the calculate score method
+            ICalculateTotal calculateTotal = new CalculateTotal();
+            int total = calculateTotal.Calculate(dealer, aceBool);
+            //Then i get back a total of 11
+            Assert.AreEqual(11, total);
         }
     }
 }
