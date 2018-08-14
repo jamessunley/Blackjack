@@ -15,11 +15,11 @@ namespace Blackjack
                if (card.Value == "Jack" || card.Value == "Queen" || card.Value == "King")
                {
                    total += 10;
-               }else if (card.Value == "Ace" && aceBool == true)
+               }else if (card.Value == "Ace" && aceBool)
                {
                    total += 11;
                }
-               else if (card.Value == "Ace" && aceBool == false)
+               else if (card.Value == "Ace" && !aceBool)
                {
                    total += 1;
                }

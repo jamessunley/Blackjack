@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Deck\CalculateCardValue.cs" />
     <Compile Include="Deck\Card.cs" />
     <Compile Include="Deck\InitialiseDeck.cs" />
+    <Compile Include="Interfaces\ICalculateCardValue.cs" />
     <Compile Include="Interfaces\IStartDeck.cs" />
     <Compile Include="Gameplay\Bust.cs" />
     <Compile Include="Deck\CalculateTotal.cs" />

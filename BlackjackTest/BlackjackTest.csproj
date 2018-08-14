@@ -55,7 +55,7 @@
     <Compile Include="CalculateWinTest.cs" />
     <Compile Include="RemoveCardFromDeckTest.cs" />
     <Compile Include="ReturnCardTest.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="CalculateCardValueTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
