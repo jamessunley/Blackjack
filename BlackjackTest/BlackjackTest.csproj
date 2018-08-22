@@ -69,6 +69,7 @@
     <Compile Include="RemoveCardFromDeckTest.cs" />
     <Compile Include="ReturnCardTest.cs" />
     <Compile Include="CalculateCardValueTests.cs" />
+    <Compile Include="TotalFlowTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

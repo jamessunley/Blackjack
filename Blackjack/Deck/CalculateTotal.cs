@@ -1,4 +1,5 @@
 ﻿using Blackjack.Deck;
+using BlackjackTest;
 using System;
 using System.Collections.Generic;
 
@@ -6,26 +7,21 @@ namespace Blackjack
 {
     public class CalculateTotal : ICalculateTotal
     {
+        private readonly ICalculateCardValue cardValue;
+
+        public CalculateTotal(ICalculateCardValue cardValue)
+        {
+            this.cardValue = cardValue;
+        }
+
         public int Calculate(List<Card> dealer, Boolean aceBool)
         {
             int total = 0;
 
             dealer.ForEach(card =>
-             {
-               if (card.Value == "Jack" || card.Value == "Queen" || card.Value == "King")
-               {
-                   total += 10;
-               }else if (card.Value == "Ace" && aceBool)
-               {
-                   total += 11;
-               }
-               else if (card.Value == "Ace" && !aceBool)
-               {
-                   total += 1;
-               }
-               else
-                   total += Int32.Parse(card.Value);
-           });
+            {
+                 total += Convert.ToInt32(cardValue.Calculate(card.Value, aceBool));
+            });
 
             return total;
         }

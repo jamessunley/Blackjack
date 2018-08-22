@@ -1,5 +1,6 @@
 ﻿using Blackjack.Deck;
 using Blackjack.Interfaces;
+using BlackjackTest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Blackjack
         private static IStartDeck startDeck = new InitialseDeck();
         private static IReturnCard returnCard = new ReturnCard();
         private static IRemoveCard removeCard = new RemoveCard();
-        private static ICalculateTotal calculateTotal = new CalculateTotal();
+        private static ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
         private static IWinner winner = new Winner();
         private static IBust bust = new Bust();
 

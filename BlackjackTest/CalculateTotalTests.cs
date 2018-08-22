@@ -23,10 +23,10 @@ namespace BlackjackTest
             //And I have a calculateTotal object
             Mock<ICalculateCardValue> mock = new Mock<ICalculateCardValue>();
             //When i call the calculate score Flow method
-            ICalculateTotal calculateTotalFlow = new CalculateTotal();
+            ICalculateTotal calculateTotalFlow = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotalFlow.Calculate(dealer, aceBool);
             ////Then i get back a total of 9
-            //Assert.AreEqual(9, total);
+            Assert.AreEqual(9, total);
             //Then i will verify that the Calculate card value object is called twice
             //mock.Verify(m => m.Calculate(It.IsAny<List<Card>>(), aceBool), Times.Once);
         }
@@ -42,7 +42,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 19
             Assert.AreEqual(19, total);
@@ -60,7 +60,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 18
             Assert.AreEqual(18, total);
@@ -79,7 +79,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
@@ -97,7 +97,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 27
             Assert.AreEqual(27, total);
@@ -114,7 +114,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
@@ -131,7 +131,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
@@ -148,7 +148,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
@@ -165,7 +165,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             Assert.AreEqual(20, total);
         }
@@ -181,7 +181,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = true;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 21
             Assert.AreEqual(21, total);
@@ -198,7 +198,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
@@ -215,7 +215,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 11
             Assert.AreEqual(11, total);
@@ -233,7 +233,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 17
             Assert.AreEqual(17, total);
@@ -252,7 +252,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 19
             Assert.AreEqual(19, total);
@@ -272,7 +272,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 21
             Assert.AreEqual(21, total);
@@ -292,7 +292,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 20
             Assert.AreEqual(20, total);
@@ -309,7 +309,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = false;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 4
             Assert.AreEqual(4, total);
@@ -326,7 +326,7 @@ namespace BlackjackTest
             //And the ace == 1 (false)
             Boolean aceBool = true;
             //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
+            ICalculateTotal calculateTotal = new CalculateTotal(new CalculateCardValue());
             int total = calculateTotal.Calculate(dealer, aceBool);
             //Then i get back a total of 14
             Assert.AreEqual(14, total);
