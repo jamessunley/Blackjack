@@ -11,7 +11,7 @@ namespace Blackjack
             int total = 0;
 
             dealer.ForEach(card =>
-           {
+             {
                if (card.Value == "Jack" || card.Value == "Queen" || card.Value == "King")
                {
                    total += 10;

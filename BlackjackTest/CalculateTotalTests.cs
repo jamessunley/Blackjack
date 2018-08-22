@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Blackjack;
 using Blackjack.Deck;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace BlackjackTest
 {
@@ -19,11 +20,15 @@ namespace BlackjackTest
             dealer.Add(new Card { Suit = Suit.Clubs, Value = "6" });
             //And the ace == 1 (false)
             Boolean aceBool = false;
-            //When i call the calculate score method
-            ICalculateTotal calculateTotal = new CalculateTotal();
-            int total = calculateTotal.Calculate(dealer, aceBool);
-            //Then i get back a total of 9
-            Assert.AreEqual(9, total);
+            //And I have a calculateTotal object
+            Mock<ICalculateCardValue> mock = new Mock<ICalculateCardValue>();
+            //When i call the calculate score Flow method
+            ICalculateTotal calculateTotalFlow = new CalculateTotal();
+            int total = calculateTotalFlow.Calculate(dealer, aceBool);
+            ////Then i get back a total of 9
+            //Assert.AreEqual(9, total);
+            //Then i will verify that the Calculate card value object is called twice
+            //mock.Verify(m => m.Calculate(It.IsAny<List<Card>>(), aceBool), Times.Once);
         }
 
         [TestMethod]

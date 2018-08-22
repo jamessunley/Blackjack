@@ -8,132 +8,89 @@ namespace BlackjackTest
     [TestClass]
     public class CalculateCardValueTests
     {
+
         [TestMethod]
-        public void Given_I_Have_a_card_with_the_value_of_3_3_will_be_returned()
+        public void Given_I_Have_a_card_with_the_value_of_King_and_ace_bool_set_to_false_10_will_be_returned()
         {
-            //Given I have a list of 1 cardd
-            List<Card> dealer = new List<Card>();
-            //And they are 3 
-            dealer.Add(new Card { Suit = Suit.Clubs, Value = "3" });
-            //And the ace == 1 (false)
-            Boolean aceBool = false;
-            //When i call the calculate card value method
+            //Given I have a card with a value of King 
+            var value = "King";
+            //And an ace boolean of false
+            Boolean ace = false;
+            //When I call the calculate card value method
             ICalculateCardValue calculateCardValue = new CalculateCardValue();
-            int total = calculateCardValue.Calculate(dealer, aceBool);
-            //Then i get back a total of 3
-            Assert.AreEqual(3, total);
+            string result = calculateCardValue.Calculate(value, ace);
+            //Then I get back a value of 10 
+            Assert.AreEqual("10", result);
         }
 
         [TestMethod]
-        public void Given_I_Have_a_card_with_the_value_of_6_6_will_be_returned()
+        public void Given_I_Have_a_card_with_the_value_of_Queen_and_ace_bool_set_to_false_10_will_be_returned()
         {
-            //Given I have a list of 1 cardd
-            List<Card> dealer = new List<Card>();
-            //And they are 6
-            dealer.Add(new Card { Suit = Suit.Clubs, Value = "6" });
-            //And the ace == 1 (false)
-            Boolean aceBool = false;
-            //When i call the calculate card value method
+            //Given I have a card with a value of Queen 
+            var value = "Queen";
+            //And an ace boolean of false
+            Boolean ace = false;
+            //When I call the calculate card value method
             ICalculateCardValue calculateCardValue = new CalculateCardValue();
-            int total = calculateCardValue.Calculate(dealer, aceBool);
-            //Then i get back a total of 6
-            Assert.AreEqual(6, total);
+            string result = calculateCardValue.Calculate(value, ace);
+            //Then I get back a value of 10 
+            Assert.AreEqual("10", result);
         }
 
         [TestMethod]
-        public void Given_I_Have_a_card_with_the_value_of_9_9_will_be_returned()
+        public void Given_I_Have_a_card_with_the_value_of_Jack_and_ace_bool_set_to_false_10_will_be_returned()
         {
-            //Given I have a list of 1 cardd
-            List<Card> dealer = new List<Card>();
-            //And they are 9
-            dealer.Add(new Card { Suit = Suit.Clubs, Value = "9" });
-            //And the ace == 1 (false)
-            Boolean aceBool = false;
-            //When i call the calculate card value method
+            //Given I have a card with a value of Jack
+            var value = "Jack";
+            //And an ace boolean of false
+            Boolean ace = false;
+            //When I call the calculate card value method
             ICalculateCardValue calculateCardValue = new CalculateCardValue();
-            int total = calculateCardValue.Calculate(dealer, aceBool);
-            //Then i get back a total of 9
-            Assert.AreEqual(9, total);
+            string result = calculateCardValue.Calculate(value, ace);
+            //Then I get back a value of 10 
+            Assert.AreEqual("10", result);
         }
 
         [TestMethod]
-        public void Given_I_Have_a_card_with_the_value_of_King_10_will_be_returned()
+        public void Given_I_Have_a_card_with_the_value_of_Ace_and_ace_bool_set_to_false_1_will_be_returned()
         {
-            //Given I have a list of 1 cardd
-            List<Card> dealer = new List<Card>();
-            //And they are King
-            dealer.Add(new Card { Suit = Suit.Clubs, Value = "King" });
-            //And the ace == 1 (false)
-            Boolean aceBool = false;
-            //When i call the calculate card value method
+            //Given I have a card with a value of Ace
+            var value = "Ace";
+            //And an ace boolean of false
+            Boolean ace = false;
+            //When I call the calculate card value method
             ICalculateCardValue calculateCardValue = new CalculateCardValue();
-            int total = calculateCardValue.Calculate(dealer, aceBool);
-            //Then i get back a total of 10
-            Assert.AreEqual(10, total);
+            string result = calculateCardValue.Calculate(value, ace);
+            //Then I get back a value of 11 
+            Assert.AreEqual("1", result);
         }
 
         [TestMethod]
-        public void Given_I_Have_a_card_with_the_value_of_Jack_10_will_be_returned()
+        public void Given_I_Have_a_card_with_the_value_of_Ace_and_ace_bool_set_to_true_11_will_be_returned()
         {
-            //Given I have a list of 1 cardd
-            List<Card> dealer = new List<Card>();
-            //And they are Jack
-            dealer.Add(new Card { Suit = Suit.Clubs, Value = "Jack" });
-            //And the ace == 1 (false)
-            Boolean aceBool = false;
-            //When i call the calculate card value method
+            //Given I have a card with a value of Ace
+            var value = "Ace";
+            //And an ace boolean of true
+            Boolean ace = true;
+            //When I call the calculate card value method
             ICalculateCardValue calculateCardValue = new CalculateCardValue();
-            int total = calculateCardValue.Calculate(dealer, aceBool);
-            //Then i get back a total of 10
-            Assert.AreEqual(10, total);
+            string result = calculateCardValue.Calculate(value, ace);
+            //Then I get back a value of 11 
+            Assert.AreEqual("11", result);
         }
 
         [TestMethod]
-        public void Given_I_Have_a_card_with_the_value_of_Queen_10_will_be_returned()
+        public void Given_I_Have_a_card_with_the_value_of_King_and_ace_bool_set_to_true_10_will_be_returned()
         {
-            //Given I have a list of 1 cardd
-            List<Card> dealer = new List<Card>();
-            //And they are Queen
-            dealer.Add(new Card { Suit = Suit.Clubs, Value = "Queen" });
-            //And the ace == 1 (false)
-            Boolean aceBool = false;
-            //When i call the calculate card value method
+            //Given I have a card with a value of King
+            var value = "King";
+            //And an ace boolean of true
+            Boolean ace = true;
+            //When I call the calculate card value method
             ICalculateCardValue calculateCardValue = new CalculateCardValue();
-            int total = calculateCardValue.Calculate(dealer, aceBool);
-            //Then i get back a total of 10
-            Assert.AreEqual(10, total);
-        }
-
-        [TestMethod]
-        public void Given_I_Have_a_card_with_the_value_of_Ace_and_ace_value_is_true_11_will_be_returned()
-        {
-            //Given I have a list of 1 cardd
-            List<Card> dealer = new List<Card>();
-            //And they are Ace
-            dealer.Add(new Card { Suit = Suit.Clubs, Value = "Ace" });
-            //And the ace == 11 (true)
-            Boolean aceBool = true;
-            //When i call the calculate card value method
-            ICalculateCardValue calculateCardValue = new CalculateCardValue();
-            int total = calculateCardValue.Calculate(dealer, aceBool);
-            //Then i get back a total of 11
-            Assert.AreEqual(11, total);
-        }
-
-        [TestMethod]
-        public void Given_I_Have_a_card_with_the_value_of_Ace_and_ace_value_is_false_1_will_be_returned()
-        {
-            //Given I have a list of 1 cardd
-            List<Card> dealer = new List<Card>();
-            //And they are Ace
-            dealer.Add(new Card { Suit = Suit.Clubs, Value = "Ace" });
-            //And the ace == 1 (false)
-            Boolean aceBool = false;
-            //When i call the calculate card value method
-            ICalculateCardValue calculateCardValue = new CalculateCardValue();
-            int total = calculateCardValue.Calculate(dealer, aceBool);
-            //Then i get back a total of 1
-            Assert.AreEqual(1, total);
+            string result = calculateCardValue.Calculate(value, ace);
+            //Then I get back a value of 10 
+            Assert.AreEqual("10", result);
         }
     }
 }

@@ -5,6 +5,6 @@ namespace BlackjackTest
 {
     public interface ICalculateCardValue
     {
-        int Calculate(List<Card> dealer, bool aceBool);
+        string Calculate(string value, bool aceBool);
     }
 }
